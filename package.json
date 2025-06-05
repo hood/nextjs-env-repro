@@ -1,0 +1,22 @@
+{
+  "name": "nextjs-env-repro",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "NODE_TLS_REJECT_UNAUTHORIZED=0 next dev --turbopack",
+    "build": "cp .env.local .env.production && rm -rf ./.next/ && next build --experimental-build-mode compile && cp -r ./.next/static ./.next/standalone/.next/static && cp -r ./public ./.next/standalone/public"
+  },
+  "dependencies": {
+    "react": "19.1.0",
+    "react-dom": "19.1.0"
+  },
+  "devDependencies": {
+    "@types/node": "22.15.29",
+    "@types/react": "19.1.6",
+    "next": "15.3.3",
+    "typescript": "^5.8.3"
+  },
+  "pnpm": {
+    "neverBuiltDependencies": []
+  },
+  "packageManager": "pnpm@10.11.0"
+}
